@@ -2,12 +2,11 @@
 using namespace std;
 
 int n, res, temp;
-vector<vector<int>> alloc;
-vector<vector<int>> request;
-vector<int> available;
+vector <vector<int>> alloc;
+vector <vector<int>> request;
+vector <int> available;
 
-void input()
-{
+void input(){
     freopen("deadlock.txt", "r", stdin);
     cin >> n;   // number of processes
     cin >> res; // number of resource type
@@ -17,34 +16,26 @@ void input()
     available.resize(res);
 
     // allocation matrix
-    for (int i = 0; i < n; i++)
-    {
+    for (int i = 0; i < n; i++){
         for (int j = 0; j < res; j++)
             cin >> alloc[i][j];
     }
-
     // request matrix
-    for (int i = 0; i < n; i++)
-    {
+    for (int i = 0; i < n; i++){
         for (int j = 0; j < res; j++)
             cin >> request[i][j];
     }
-
     // available resources
     for (int i = 0; i < res; i++)
         cin >> available[i];
 }
-
-
-
 bool isSafe(){
-    bool visitedProc[n] = {0}; // processes is not in deadlock
+    bool visitedProc[n] = {0}; // initially all processes are in deadlock condition
     bool finish[n] = {0};
     // a copy of available resources
     int work[res];
-    for(int i = 0; i < res; i++){
+    for(int i = 0; i < res; i++)
         work[i] = available[i];
-    }
 
     int count = 0;
     while (count < n){
@@ -79,18 +70,32 @@ bool isSafe(){
             return false;
         }
     }
-
     cout << "There is no Deadlock!\n";
     return true;;
 }
-
-
-
-int main()
-{
+int main(){
     input();
-
     isSafe();
 
     return 0;
 }
+
+/* Sample input:
+
+    5 3
+
+    0 1 0
+    2 0 0
+    3 0 3
+    2 1 1
+    0 0 2
+
+    0 0 0
+    2 0 2
+    0 0 0
+    1 0 0
+    0 0 2
+
+    0 0 0
+
+*/

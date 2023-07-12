@@ -1,6 +1,6 @@
+// Allocate the first block/hole that is big enough
 #include <iostream>
 #include <vector>
-
 using namespace std;
 
 int n; // number of processes
@@ -50,3 +50,11 @@ int main(){
     firstFit();
     return 0;
 }
+/*
+    sample input:
+
+    4 5
+    212 417 112 426
+    100 500 200 300 600
+
+*/

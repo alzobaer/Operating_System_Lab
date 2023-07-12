@@ -8,7 +8,7 @@ using namespace std;
 int pageFaults(int n, int c, const vector<int>& pages) {
     int count = 0;
     vector<int> v;
-    unordered_map<int, int> mp;
+    unordered_map <int, int> mp;
 
     for (int i = 0; i < n; i++) {
         auto it = find(v.begin(), v.end(), pages[i]);
@@ -39,7 +39,6 @@ int pageFaults(int n, int c, const vector<int>& pages) {
 
     return count;
 }
-
 int main() {
     vector<int> pages = {1, 2, 3, 4, 2, 1, 5};
     int n = pages.size();

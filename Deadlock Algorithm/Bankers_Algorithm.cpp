@@ -21,7 +21,6 @@ void input(){
 			cin >> alloc[i][j];
 		}
 	}
-
 	for(int i = 0; i < n; i++){
 		for(int j = 0; j < res; j++){
 			cin >> maxNeed[i][j];
@@ -92,6 +91,7 @@ int main(){
 }
 
 /*
+
 	5 4
 
 	0 0 1 2
